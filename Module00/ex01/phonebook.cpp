@@ -6,14 +6,14 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 15:32:19 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/02/23 12:23:54 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/02/23 14:53:48 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "phonebook.hpp"
 
 Contacts    allContact[8];
-int         i = 0;
+int         acc = 0;
 
 std::string     ft_upper(std::string input)
 {
@@ -41,12 +41,12 @@ int             main( void )
             exit(1);
         else if (!input.compare("ADD"))
         {
-            if (i == 8)
+            if (acc == 8)
                 std::cout << "Your have limit of contacts!!" << std::endl;
             else
             {
-                allContact[i].getAllInfo();
-                i++;
+                allContact[acc].getAllInfo();
+                acc++;
             }
         }
         else if (!input.compare("SEARCH"))
@@ -56,17 +56,21 @@ int             main( void )
                 allContact[k].beforeIndex(k);
             std::cout << "Enter index of the contact for display the all informations: ";
             std::getline (std::cin, input);
-            num = std::stoi(input);
-            if (num > 0 && num < 9) {
-                allContact[num - 1].afterIndex();
+            if (input[0] > '0' && input[0] < '9' && input[1] == '\0') {
+                num = std::stoi(input);
+                if (num <= acc) {
+                    allContact[num - 1].afterIndex();
+                }
+                else {
+                    std::cout << "No contact in this index!!" << std::endl; 
+                }
             }
             else {
-                std::cout << "No contact in this index!!"; 
+                std::cout << "No contact in this index!!" << std::endl; 
             }
         }
         else
             std::cout << "ENTER THE CORRECT COMMAND [ EXIT || ADD || SEARCH ]!! TRY AGAIN !!!" << std::endl;
     }
-    
     return (0);
 }
