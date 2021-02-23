@@ -6,11 +6,14 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 15:32:19 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/02/20 12:23:07 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/02/23 12:23:54 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "phonebook.hpp" 
+# include "phonebook.hpp"
+
+Contacts    allContact[8];
+int         i = 0;
 
 std::string     ft_upper(std::string input)
 {
@@ -24,59 +27,45 @@ std::string     ft_upper(std::string input)
     return upper;
 }
 
-std::string     enterInfo(std::string info)
-{
-    std::string input;
-
-    std::cout << "Enter your " << info << ": ";
-    std::getline (std::cin, input);
-    std::cout << std::endl;
-    
-    return input;
-}
-
 int             main( void )
 {
     std::string input;
-    Contacts    allContact[9];
-    int         i;
-    
-    i = 0;
+    int         num;
+
     while (true)
     {
         std::cout << "Enter the command : " << std::endl;
         std::getline (std::cin, input);
         input = ft_upper(input);
-        if (input.compare("EXIT") == 0)
+        if (!input.compare("EXIT"))
             exit(1);
-        else if (input.compare("ADD") == 0)
+        else if (!input.compare("ADD"))
         {
             if (i == 8)
                 std::cout << "Your have limit of contacts!!" << std::endl;
             else
             {
-                std::cout << i << std::endl;
-                Contacts conta;
-                std::cout << "adrr = : " << &conta << std::endl;
-                std::cout << "-----  Please!, Enter all informations of your contact!!  -----" << std::endl << std::endl; 
-                // allContact[i].firstName = enterInfo("first name");
-                // allContact[i].lastName = enterInfo("last name");          
-                // allContact[i].nickName = enterInfo("nickname");
-                // allContact[i].postalAddress = enterInfo("postal address");
-                // allContact[i].emailAddress = enterInfo("email address");           
-                // allContact[i].phoneNumber = enterInfo("phone number");
-                // allContact[i].birthdayDate = enterInfo("birthday date");
-                // allContact[i].favoriteMeal = enterInfo("favorite meal");
-                // allContact[i].underwearColor = enterInfo("underwear color");
-                // allContact[i].darkestSecret = enterInfo("darkest secret");
-                // allContact[i].login = enterInfo("login");
-                // std::cout << "your last name of index[" << i << "]: " << allContact[i]->lastName << std::endl;
+                allContact[i].getAllInfo();
                 i++;
             }
-            // std::cout << "your last name of index[" << 0 << "]: " << allContact[0]->lastName << std::endl;
+        }
+        else if (!input.compare("SEARCH"))
+        {
+            std::cout << "     index"<< "|" << "first name" << "|" << " last name" << "|" <<"  nickname" << "|"<<  std::endl;
+            for (int k = 0; k < 8; k++)
+                allContact[k].beforeIndex(k);
+            std::cout << "Enter index of the contact for display the all informations: ";
+            std::getline (std::cin, input);
+            num = std::stoi(input);
+            if (num > 0 && num < 9) {
+                allContact[num - 1].afterIndex();
+            }
+            else {
+                std::cout << "No contact in this index!!"; 
+            }
         }
         else
-            std::cout << "Enter the correct command [ exit || add || search ]!! TRY AGAIN !!!" << std::endl;
+            std::cout << "ENTER THE CORRECT COMMAND [ EXIT || ADD || SEARCH ]!! TRY AGAIN !!!" << std::endl;
     }
     
     return (0);

@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 18:58:40 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/02/20 12:39:39 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/02/23 11:47:14 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,18 @@ private:
     std::string _favoriteMeal;
     std::string _underwearColor;
     std::string _darkestSecret;
-    
+
 public:
 
     // info contact attributs=variables
     Contacts ( void ); // constractor fonction 
     ~Contacts( void ); // destractor fonction
-    
+
+    void        getAllInfo( void );
+    void        beforeIndex( int x );
+    void        afterIndex( void );
+
+    std::string lenHandle(std::string str); 
     std::string getFirstName( void );
     std::string getLastName( void );
     std::string getNickName( void );
@@ -50,21 +55,18 @@ public:
     std::string getUnderwearColor( void );
     std::string getDarkestSecret( void );
 
-    void setFirstName( std::string );
-    void setLastName( std::string );
-    void setNickName( std::string );
-    void setLogin( std::string );
-    void setPostalAddress( std::string );
-    void setEmailAddress( std::string );
-    void setPhoneNumber( std::string );
-    void setBirthdayDate( std::string );
-    void setFavoriteMeal( std::string );
-    void setUnderwearColor( std::string );
-    void setDarkestSecret( std::string );
-    
+    void setFirstName( void );
+    void setLastName( void );
+    void setNickName( void );
+    void setLogin( void );
+    void setPostalAddress( void );
+    void setEmailAddress( void );
+    void setPhoneNumber( void );
+    void setBirthdayDate( void );
+    void setFavoriteMeal( void );
+    void setUnderwearColor( void );
+    void setDarkestSecret( void );
 };
 
-std::string     enterInfo(std::string info);
 std::string     ft_upper(std::string input);
-
 #endif
