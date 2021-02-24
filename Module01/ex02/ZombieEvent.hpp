@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/18 11:46:48 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/02/23 16:56:27 by ibouhiri         ###   ########.fr       */
+/*   Created: 2021/02/24 14:50:49 by ibouhiri          #+#    #+#             */
+/*   Updated: 2021/02/24 17:56:30 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef ZOMBIEEVENT_H
+#define ZOMBIEEVENT_H
 
-int     main(int argc , char **arg)
-{
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	else
-	{
-		for (int y = 1; arg[y]; y++)
-		{
-			for (int i = 0; arg[y][i]; i++)
-			{
-				putchar(toupper((unsigned char)arg[y][i]));
-			}
-			if (arg[y + 1])
-				std::cout << ' ';
-		}
-		std::cout << std::endl;
-	}
-	return (0);
-}
+# include "Zombie.hpp"
+
+class ZombieEvent{
+    
+public:
+
+    void setZombieType( Zombie & obj );
+    
+    Zombie* newZombie(std::string name);
+    
+    ZombieEvent( void );
+    ~ZombieEvent( void );
+};
+
+#endif
