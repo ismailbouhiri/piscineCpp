@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 14:50:47 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/02/24 18:42:22 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/02/25 09:08:19 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ZombieEvent::ZombieEvent( void )
 {
-	ret
+	return ;
 }
 
 ZombieEvent::~ZombieEvent( void )
