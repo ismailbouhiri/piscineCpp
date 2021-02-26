@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ex04.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/24 14:50:38 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/02/26 10:58:38 by ibouhiri         ###   ########.fr       */
+/*   Created: 2021/02/26 11:08:00 by ibouhiri          #+#    #+#             */
+/*   Updated: 2021/02/26 11:14:47 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ZombieEvent.hpp"
+#include <iostream>
 
-void	randomChump( void)
+int		main( void )
 {
-	ZombieEvent events;
-	int randomNumber;
-	std::string names[6] = {"Macheal", "Jack", "Noah", "Ava", "James", "Mason"};
+	std::string str = "HI THIS IS BRAIN";
 	
-	srand (time(NULL));
-	randomNumber = ( rand() % 10 ) - 4;
-	randomNumber *= (randomNumber < 0) ? -1 : 1;
+	std::string *pointer = &str;
+	std::string& reference = str;
 	
-	Zombie* zombie = events.newZombie(names[randomNumber]);
-	zombie->announce();
-	delete zombie;
-}
-
-int     main( void )
-{
-	
-	randomChump();
+	std::cout << " ---- DISPLAY THE STRING WITH POINTER ---- " << std::endl;
+	std::cout << "[ "<< *pointer  << " ]" << std::endl;
+	std::cout << " ---- DISPLAY THE STRING WITH REFERENCE ---- " << std::endl;
+	std::cout << "[ "<< reference  << " ]" << std::endl;
 	return (0);
 }

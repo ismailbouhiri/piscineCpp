@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Human.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/25 09:20:45 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/02/26 11:03:29 by ibouhiri         ###   ########.fr       */
+/*   Created: 2021/02/26 16:08:58 by ibouhiri          #+#    #+#             */
+/*   Updated: 2021/02/26 18:33:32 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieHorde.hpp"
+# include "Human.hpp"
 
-int     main ( void )
+Human::Human( void )
 {
-	ZombieHorde horde(25);
-	return (1);
+	std::cout << "[ CREATE THE HUMAN INSTANCE ]" << std::endl;
+}
+
+Human::~Human( void )
+{
+	std::cout << "[ DESTROY THE HUMAN INSTANCE ]" << std::endl;
+}
+
+std::string		Human::identify( void ) const
+{
+	return this->_brain.identify();
+}
+
+const Brain&	Human::getBrain( void ) const
+{
+	return this->_brain;
 }

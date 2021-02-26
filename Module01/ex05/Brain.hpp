@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/25 09:20:45 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/02/26 11:03:29 by ibouhiri         ###   ########.fr       */
+/*   Created: 2021/02/26 16:08:55 by ibouhiri          #+#    #+#             */
+/*   Updated: 2021/02/26 17:59:18 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieHorde.hpp"
+#ifndef BRAIN_H
+#define BRAIN_H
 
-int     main ( void )
+# include <iostream>
+#include <sstream>
+#include <string>
+
+class Brain
 {
-	ZombieHorde horde(25);
-	return (1);
-}
+private:
+	
+public:
+	Brain( void );
+	~Brain( void );
+
+	std::string identify( void ) const;
+};
+
+#endif

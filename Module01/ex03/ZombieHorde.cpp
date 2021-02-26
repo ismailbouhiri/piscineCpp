@@ -1,71 +1,65 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
+/*                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 09:20:48 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/02/25 11:46:06 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/02/26 10:32:26 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ZombieHorde.hpp"
 
+int		g_randomNumber;
+
 ZombieHorde::ZombieHorde( int n )
 {
 	this->setNumberOfZombies(n);
-	*this->zombiesTab = new Zombie[n];
+	this->_zombiesTab = new Zombie[n];
+	this->doingTasks();
 }
 
 ZombieHorde::~ZombieHorde( void )
 {
-	Zombie** tab;
-	int number;
+	delete [] this->_zombiesTab;
+}
 
-	tab = this->getZombiesTab();
-	number = this->getNumberOfZombies();
+Zombie		ZombieHorde::newZombie( std::string name )
+{
+	Zombie obj;
 
-	for (int i = 0; i < number; i++)
-	{
-		delete tab[i];
-	}
-	delete [] tab;
+	obj.setName( name );
+	this->setZombieType( obj );
+	
+	return (obj);
+}
+
+void		ZombieHorde::setZombieType( Zombie & obj )
+{
+	std::string typeOfZombies[6] = {"Biological", "Supernatural",
+	"Chemical", "Technological", "Constructed", "Magic"};
+	
+	srand (time(NULL));
+	g_randomNumber += rand() % 100 ;
+	g_randomNumber = g_randomNumber % 6;
+
+	obj.setType(typeOfZombies[g_randomNumber]);
 }
 
 void	ZombieHorde::doingTasks( void )
 {
-	int number;
-	Zombie** tab;
+	std::string names[6] = {"Macheal", "Jack", "Noah", "Ava", "James", "Mason"};
 
-	number = this->getNumberOfZombies();
-	tab = this->getZombiesTab();
-	
-	for (int i = 0; i < number; i++)
+	for(int i = 0; i < this->getNumberOfZombies(); i++)
 	{
-		tab[i] = this->newZombie();
-		tab[i]->announce();
+		srand (time(NULL));
+		g_randomNumber += rand() % 100 ;
+		g_randomNumber = g_randomNumber % 6;
+		this->_zombiesTab[i] = this->newZombie(names[g_randomNumber]);
+		this->announce(_zombiesTab[i]);
 	}
-	tab[this->getNumberOfZombies()] = '\0';
-}
-
-Zombie*		ZombieHorde::newZombie( void )
-{
-	std::string namesOfZombies[6] = {"Macheal", "Jack", "Noah", "Ava", "James", "Mason"};
-	std::string typeOfZombies[6] = {"Biological", "Supernatural", "Chemical",
-	"Technological", "Constructed", "Magic"};
-
-	Zombie* obj = new Zombie;
-	int randomNumber;
-
-	srand (time(NULL));
-	randomNumber = ( rand() % 10 ) - 4;
-	randomNumber *= (randomNumber < 0) ? -1 : 1;
-
-	obj->setName(namesOfZombies[randomNumber]);
-	obj->setType(typeOfZombies[randomNumber]);
-
-	return ( obj );
 }
 
 void		ZombieHorde::announce( Zombie& zombie )
@@ -75,20 +69,10 @@ void		ZombieHorde::announce( Zombie& zombie )
 
 void		ZombieHorde::setNumberOfZombies( int n )
 {
-	this->numberOfZombies = n;
+	this->_numberOfZombies = n;
 }
 
 int			ZombieHorde::getNumberOfZombies( void )
 {
-	return this->numberOfZombies;
-}
-	
-void		ZombieHorde::setZombiesTab( Zombie* zombie, int index )
-{
-	this->zombiesTab[index] = zombie;
-}
-
-Zombie**	ZombieHorde::getZombiesTab( void )
-{
-	return this->zombiesTab;
+	return this->_numberOfZombies;
 }

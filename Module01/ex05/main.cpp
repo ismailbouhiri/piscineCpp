@@ -5,31 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/24 14:50:38 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/02/26 10:58:38 by ibouhiri         ###   ########.fr       */
+/*   Created: 2021/02/26 16:09:03 by ibouhiri          #+#    #+#             */
+/*   Updated: 2021/02/26 18:01:58 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ZombieEvent.hpp"
+#include "Human.hpp"
 
-void	randomChump( void)
+int		main( void )
 {
-	ZombieEvent events;
-	int randomNumber;
-	std::string names[6] = {"Macheal", "Jack", "Noah", "Ava", "James", "Mason"};
-	
-	srand (time(NULL));
-	randomNumber = ( rand() % 10 ) - 4;
-	randomNumber *= (randomNumber < 0) ? -1 : 1;
-	
-	Zombie* zombie = events.newZombie(names[randomNumber]);
-	zombie->announce();
-	delete zombie;
-}
+	Human bob;
 
-int     main( void )
-{
-	
-	randomChump();
-	return (0);
+	std::cout << bob.identify() << std::endl;
+	std::cout << bob.getBrain().identify() << std::endl;
 }
