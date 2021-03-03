@@ -6,12 +6,13 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/28 11:42:38 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/02 14:57:46 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/02 15:35:43 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
+// ================ OverLoading constructions =======================
 
 Fixed::Fixed( const Fixed& copyConstractor )
 {
@@ -22,28 +23,62 @@ Fixed::Fixed( const Fixed& copyConstractor )
 Fixed::Fixed( void )
 {
 	std::cout << "[ Default constructor called !! ]" << std::endl;
-	this->_rawBits = 0;
+	this->_fixedPoint = 0;
 }
+
+Fixed::Fixed( int const NumberInt )
+{
+	std::cout << "[ [ INT ] constructor called !! ]" << std::endl;
+	this->_fixedPoint = NumberInt;
+}
+
+Fixed::Fixed( float const NumberFlaot )
+{
+	std::cout << "[ [ FLOAT ] constructor called !! ]" << std::endl;
+	this->_fixedPoint = NumberFlaot;	
+}
+
+// ================ EndOf - OverLoading constructions - =============
 
 Fixed::~Fixed()
 {
 	std::cout << "[DESTRUCTOR CALLED !! ]" << std::endl;
 }
 
+// =================== operators ====================================
+
 void	Fixed::operator=(const Fixed &oper)
 {
 	std::cout << "[ Assignation operator called !!] " << std::endl;
-	this->_rawBits = oper.getRawBits();
+	this->_fixedPoint = oper.getRawBits();
 }
 
-void Fixed::setRawBits( int const raw )
+std::ofstream&	operator<<(std::ofstream &o, Fixed const& oper)
 {
-	std::cout << "[ getRawBits member function called !! ] " << std::endl;
-	this->_rawBits = raw;
+	o << oper.toFloat();
+	return o;
 }
 
-int Fixed::getRawBits( void ) const
+// =================== EndOfOperators ===============================
+
+void	Fixed::setRawBits( int const raw )
 {
 	std::cout << "[ getRawBits member function called !! ] " << std::endl;
-	return this->_rawBits;
+	this->_fixedPoint = raw;
+}
+
+int		Fixed::getRawBits( void ) const
+{
+	std::cout << "[ getRawBits member function called !! ] " << std::endl;
+	return this->_fixedPoint;
+}
+
+float	Fixed::toFloat( void ) const
+{
+	
+}
+
+int		Fixed::toInt( void ) const
+{
+	
 }
