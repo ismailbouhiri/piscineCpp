@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 19:06:55 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/02/23 11:47:08 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/05 10:36:12 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void		Contacts::getAllInfo( void )
 
 void		Contacts::afterIndex( void )
 {
-	std::cout <<"your fisrt name : " << this->getFirstName() << std::endl;
+	std::cout <<"your first name : " << this->getFirstName() << std::endl;
 	std::cout <<"your last name : " << this->getLastName() << std::endl;
 	std::cout <<"your nickname : " << this->getNickName() << std::endl;
 	std::cout <<"your login : " << this->getLogin() << std::endl;

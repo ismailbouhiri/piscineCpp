@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 11:46:48 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/02/23 16:56:27 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/05 10:43:46 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int     main(int argc , char **arg)
 		{
 			for (int i = 0; arg[y][i]; i++)
 			{
-				putchar(toupper((unsigned char)arg[y][i]));
+				std::cout << (char)toupper(arg[y][i]);
 			}
 			if (arg[y + 1])
 				std::cout << ' ';

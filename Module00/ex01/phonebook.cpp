@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 15:32:19 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/02/23 16:56:15 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/05 10:36:43 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int             main( void )
 
 	while (true)
 	{
-		std::cout << "Enter the command : " << std::endl;
+		std::cout << "Enter the command :\n ----> ";
 		std::getline (std::cin, input);
 		input = ft_upper(input);
 		if (!input.compare("EXIT"))
@@ -52,7 +52,7 @@ int             main( void )
 		else if (!input.compare("SEARCH"))
 		{
 			std::cout << "     index"<< "|" << "first name" << "|" << " last name" << "|" <<"  nickname" << "|"<<  std::endl;
-			for (int k = 0; k < 8; k++)
+			for (int k = 0; k < acc; k++)
 				allContact[k].beforeIndex(k);
 			std::cout << "Enter index of the contact for display the all informations: ";
 			std::getline (std::cin, input);
