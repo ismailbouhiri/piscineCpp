@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/28 11:42:40 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/02 14:28:53 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/05 09:47:35 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define FIXED_H
 
 #include <iostream>
+
 
 class Fixed
 {
