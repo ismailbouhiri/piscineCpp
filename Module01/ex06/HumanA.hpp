@@ -6,12 +6,12 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 18:40:12 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/02/27 12:05:40 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/06 14:46:35 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_H
-#define HUMANA_H
+#ifndef HUMANA_HPP
+#define HUMANA_HPP
 
 #include "Weapon.hpp"
 

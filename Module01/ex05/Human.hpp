@@ -6,12 +6,12 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 16:09:00 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/02/26 18:33:25 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/06 14:46:31 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMAN_H
-#define HUMAN_H
+#ifndef HUMAN_HPP
+#define HUMAN_HPP
 
 # include "Brain.hpp"
 

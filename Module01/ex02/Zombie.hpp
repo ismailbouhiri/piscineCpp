@@ -6,12 +6,12 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 14:50:44 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/02/24 17:56:37 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/06 14:46:13 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-#define ZOMBIE_H
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
 # include <string>
 # include <iostream>

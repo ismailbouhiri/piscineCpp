@@ -6,12 +6,12 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 16:08:55 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/02/26 17:59:18 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/06 14:46:27 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_H
-#define BRAIN_H
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
 # include <iostream>
 #include <sstream>

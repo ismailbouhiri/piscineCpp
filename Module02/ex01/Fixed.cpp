@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/28 11:42:38 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/02 15:35:43 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/06 12:53:26 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ Fixed::Fixed( void )
 Fixed::Fixed( int const NumberInt )
 {
 	std::cout << "[ [ INT ] constructor called !! ]" << std::endl;
-	this->_fixedPoint = NumberInt;
+	this->_fixedPoint =  NumberInt * (1 << Fixed::_numberOfFractional);
 }
 
 Fixed::Fixed( float const NumberFlaot )
 {
 	std::cout << "[ [ FLOAT ] constructor called !! ]" << std::endl;
-	this->_fixedPoint = NumberFlaot;	
+	this->_fixedPoint =  roundf(NumberFlaot * (1 << Fixed::_numberOfFractional));
 }
 
 // ================ EndOf - OverLoading constructions - =============
@@ -47,17 +47,12 @@ Fixed::~Fixed()
 
 // =================== operators ====================================
 
-void	Fixed::operator=(const Fixed &oper)
+void	Fixed::operator=( const Fixed &oper )
 {
 	std::cout << "[ Assignation operator called !!] " << std::endl;
 	this->_fixedPoint = oper.getRawBits();
 }
 
-std::ofstream&	operator<<(std::ofstream &o, Fixed const& oper)
-{
-	o << oper.toFloat();
-	return o;
-}
 
 // =================== EndOfOperators ===============================
 
@@ -75,10 +70,16 @@ int		Fixed::getRawBits( void ) const
 
 float	Fixed::toFloat( void ) const
 {
-	
+	return (float)this->_fixedPoint / (1 << Fixed::_numberOfFractional);
 }
 
 int		Fixed::toInt( void ) const
 {
-	
+	return this->_fixedPoint / (1 << Fixed::_numberOfFractional);
+}
+
+std::ostream&	operator<<(std::ostream& out ,Fixed const& oper )
+{
+	out << oper.toFloat();
+	return out;
 }

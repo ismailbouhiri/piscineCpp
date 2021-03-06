@@ -6,12 +6,12 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 16:44:34 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/02/24 14:42:25 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/06 14:46:00 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_H
-#define PONY_H
+#ifndef PONY_HPP
+#define PONY_HPP
 # include <iostream>
 
 class Pony {

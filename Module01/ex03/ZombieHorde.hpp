@@ -6,12 +6,12 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 09:20:52 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/02/26 10:53:57 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/06 14:46:23 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIEHORDE_H
-#define ZOMBIEHORDE_H
+#ifndef ZOMBIEHORDE_HPP
+#define ZOMBIEHORDE_HPP
 
 # include "Zombie.hpp"
 
