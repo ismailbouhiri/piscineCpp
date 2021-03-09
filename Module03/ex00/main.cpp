@@ -6,7 +6,15 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 09:53:45 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/07 09:53:46 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/07 15:02:07 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "FragTrap.hpp"
+
+int		main( void )
+{
+	
+
+	return (0);
+}
