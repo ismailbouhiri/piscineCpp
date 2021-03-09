@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 09:53:43 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/07 15:14:05 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/09 11:21:25 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ public:
 	void meleeAttack(std::string const & target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
+	void vaulthunter_dot_exe(std::string const & target);
 };
 
 #endif
