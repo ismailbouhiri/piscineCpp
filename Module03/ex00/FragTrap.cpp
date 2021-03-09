@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 09:53:41 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/07 15:29:19 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/09 10:20:42 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ FragTrap::FragTrap( std::string& name ) : _Name(name)
 
 FragTrap::FragTrap( FragTrap const& CpObj)
 {
-	std::cout << "[ Copy CONSTRUCTION CALLED !! ]" << std::endl;
+	std::cout << "[ COPY CONSTRUCTION CALLED !! ]" << std::endl;
 	*this = CpObj;
 }
 	
@@ -59,7 +59,7 @@ FragTrap& FragTrap::operator=(FragTrap const& obj)
 	
 void	FragTrap::rangedAttack(std::string const & target)
 {
-	
+	std::cout << "FR4G-TP [ " << this->_Name attacks <target> at range, causing <damage> points of damage!
 }
 
 void	FragTrap::meleeAttack(std::string const & target)
