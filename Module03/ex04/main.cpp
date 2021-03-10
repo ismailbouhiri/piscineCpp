@@ -6,13 +6,14 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 09:53:45 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/10 12:04:14 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/10 15:01:04 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ScavTrap.hpp"
 # include "FragTrap.hpp"
 # include "NinjaTrap.hpp"
+# include "SuperTrap.hpp"
 
 int		main( void )
 {
@@ -46,5 +47,15 @@ int		main( void )
 	Ninja.ninjaShoebox(Ninja);
 	Ninja.ninjaShoebox(Frag);
 	Ninja.beRepaired(25);
+	
+	std::cout << " -------------------------------------------------------- " << std::endl;
+
+	SuperTrap Super("Super");
+	Super.takeDamage(50);
+	Super.meleeAttack("Scav");
+	Super.rangedAttack("Frag");
+	Super.vaulthunter_dot_exe("Mamoussa");
+	Super.ninjaShoebox(Ninja);
+	Super.beRepaired(25);
 	return (0);
 }

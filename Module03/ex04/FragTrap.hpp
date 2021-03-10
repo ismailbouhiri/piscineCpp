@@ -1,41 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/09 18:15:52 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/10 11:57:58 by ibouhiri         ###   ########.fr       */
+/*   Created: 2021/03/07 09:53:43 by ibouhiri          #+#    #+#             */
+/*   Updated: 2021/03/10 12:40:06 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NINJATRAP_HPP
-#define NINJATRAP_HPP
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
 # include "ClapTrap.hpp"
-# include "ScavTrap.hpp"
-# include "FragTrap.hpp"
 
-class NinjaTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 
-private:
-
-	NinjaTrap( void );
+protected:
+	FragTrap( void );	
 
 public:
-	
-	NinjaTrap( std::string name );
-	NinjaTrap( NinjaTrap const& CpObj);
-	~NinjaTrap ( void );
 
-	NinjaTrap& operator=( NinjaTrap const& obj );
-	
-	void ninjaShoebox(const FragTrap &obj) const;
-	void ninjaShoebox(const ScavTrap &obj) const;
-	void ninjaShoebox(const NinjaTrap &obj) const;
+	FragTrap( std::string name );
+	FragTrap( FragTrap const& CpObj);
+	~FragTrap ( void );
 
+	FragTrap& operator=(FragTrap const& obj);
+	void vaulthunter_dot_exe(std::string const & target);
 };
 
 #endif

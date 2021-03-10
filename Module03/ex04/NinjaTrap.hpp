@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 18:15:52 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/10 11:57:58 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/10 12:39:56 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 # include "ScavTrap.hpp"
 # include "FragTrap.hpp"
 
-class NinjaTrap : public ClapTrap
+class NinjaTrap : virtual public ClapTrap
 {
 
-private:
+protected:
 
 	NinjaTrap( void );
 
