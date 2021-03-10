@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/07 09:53:43 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/09 15:42:23 by ibouhiri         ###   ########.fr       */
+/*   Created: 2021/03/09 16:56:55 by ibouhiri          #+#    #+#             */
+/*   Updated: 2021/03/09 18:12:49 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
 # include <string>
 # include <iostream>
 
-class FragTrap
+class ClapTrap
 {
-private:
 
-	FragTrap( void );
+protected:
 	
+	ClapTrap( void );
 	std::string _Name;
 	
 	int	_HitPoints;
@@ -35,17 +35,16 @@ private:
 	
 public:
 
-	FragTrap( std::string name );
-	FragTrap( FragTrap const& CpObj);
-	~FragTrap ( void );
+	ClapTrap( std::string name );
+	ClapTrap( ClapTrap const& CpObj);
+	~ClapTrap ( void );
 	
-	FragTrap& operator=(FragTrap const& obj);
+	ClapTrap& operator=(ClapTrap const& obj);
 	
 	void rangedAttack(std::string const & target);
 	void meleeAttack(std::string const & target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
-	void vaulthunter_dot_exe(std::string const & target);
 };
 
 #endif

@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/07 09:53:41 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/09 16:00:38 by ibouhiri         ###   ########.fr       */
+/*   Created: 2021/03/09 16:47:49 by ibouhiri          #+#    #+#             */
+/*   Updated: 2021/03/09 18:07:36 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "ClapTrap.hpp"
 
-FragTrap::FragTrap( void )
+ClapTrap::ClapTrap( void )
 {
-	std::cout << "[ DEFAULT CONSTRUCTION CALLED !! ]" << std::endl;
+	std::cout << "[ DEFAULT CONSTRUCTION CALLED !! ] - [ ClapTrap ]" << std::endl;
 }
 
-FragTrap::~FragTrap( void )
+ClapTrap::~ClapTrap( void )
 {
-	std::cout << "[DESTRUCTOR CALLED !! ]" << std::endl;
+	std::cout << "[DESTRUCTOR CALLED !! ] - [ ClapTrap ]" << std::endl;
 }
 
-FragTrap::FragTrap( std::string name ) : _Name(name)
+ClapTrap::ClapTrap( std::string name ) : _Name(name)
 {
-	std::cout << "[ OVERLOADING CONSTRUCTION CALLED !! ]" << std::endl;
+	std::cout << "[ OVERLOADING CONSTRUCTION CALLED !! ] - [ ClapTrap ]" << std::endl;
 	
 	this->_HitPoints			=	100;
 	this->_MaxHitPoints 		=	100;
@@ -37,13 +37,13 @@ FragTrap::FragTrap( std::string name ) : _Name(name)
 	
 }
 
-FragTrap::FragTrap( FragTrap const& CpObj)
+ClapTrap::ClapTrap( ClapTrap const& CpObj)
 {
-	std::cout << "[ COPY CONSTRUCTION CALLED !! ]" << std::endl;
+	std::cout << "[ COPY CONSTRUCTION CALLED !! ] - [ ClapTrap ]" << std::endl;
 	*this = CpObj;
 }
 	
-FragTrap& FragTrap::operator=(FragTrap const& obj)
+ClapTrap& ClapTrap::operator=(ClapTrap const& obj)
 {
 	this->_Name					=	obj._Name;
 	this->_HitPoints			=	obj._HitPoints;
@@ -58,26 +58,26 @@ FragTrap& FragTrap::operator=(FragTrap const& obj)
 	return (*this);
 }
 	
-void	FragTrap::rangedAttack(std::string const & target)
+void	ClapTrap::rangedAttack(std::string const & target)
 {
 	std::cout << "FR4G-TP [ " << this->_Name << " ] attacks " << target <<
-	" at range, causing " << this->_RangedAttackDamage << " points of damage! *_* !." << std::endl;
+	" at range, causing " << this->_RangedAttackDamage << " points of damage! *_* [ ClapTrap ]!." << std::endl;
 }
 
-void	FragTrap::meleeAttack(std::string const & target)
+void	ClapTrap::meleeAttack(std::string const & target)
 {
 	std::cout << "FR4G-TP [ " << this->_Name << " ] attacks " << target <<
-	" at range, causing " << this->_MelleAttackDamage << " points of damage! *_* !." << std::endl;
+	" at range, causing " << this->_MelleAttackDamage << " points of damage! *_* [ ClapTrap ]!." << std::endl;
 }
 
-void	FragTrap::takeDamage(unsigned int amount)
+void	ClapTrap::takeDamage(unsigned int amount)
 {
 	amount				=	( (int)amount <= this->_ArmorDamagereduction ) ? 0 : amount - this->_ArmorDamagereduction;
 	this->_HitPoints 	=	( (int)amount > this->_HitPoints ) ? 0 : this->_HitPoints - amount;	
-	std::cout << "FR4G-TP [ " << this->_Name << " ] His Take a damage!! OH LALALA!! [ " << this->_HitPoints << " ] [ #CHouf_Chi_CHwiwch_Dik_Jih ] !!." << std::endl;
+	std::cout << "FR4G-TP [ " << this->_Name << " ] His Take a damage!! OH LALALA!! [ " << this->_HitPoints << " ] [ #CHouf_Chi_CHwiwch_Dik_Jih ] [ ClapTrap ]!!." << std::endl;
 }
 
-void	FragTrap::beRepaired(unsigned int amount)
+void	ClapTrap::beRepaired(unsigned int amount)
 {
 	unsigned int Energy;
 
@@ -91,23 +91,5 @@ void	FragTrap::beRepaired(unsigned int amount)
 		Energy				 =	( (int)amount >= this->_MaxEnergyPoints ) ? this->_MaxEnergyPoints : amount;
 		this->_EnergyPoints	 =  ( Energy + this->_EnergyPoints > 100 ) ? 100 : Energy + this->_EnergyPoints;	
 	}
-	std::cout << " Yuuuum Yuuum !! [ ENERY BOOST ] T-Y HP = [ "<< this->_HitPoints <<" ] -- Energy = [ " << this->_EnergyPoints <<" ]!!" << std::endl;
-}
-
-void FragTrap::vaulthunter_dot_exe(std::string const & target)
-{
-	std::string	RandomAttack[5] = { "CHAWAYGRI-FLKMARA" , "CHA9LAH", "CC", "SEGFAULT-YAAA3", "RANINGAN"};
-	int			RandomNumber;
-
-	RandomNumber = rand() % 5;
-	if (this->_EnergyPoints < 25)
-	{
-		std::cout << "[ YOU DON'T HAVE ENOUGH ENERGY ] !!" << std::endl;
-	}
-	else
-	{
-		this->_EnergyPoints -= 25;
-		std::cout << "FR4G-TP [ " << this->_Name << " ] ATTACK " << target <<
-		" With His best Sort > [ " << RandomAttack[RandomNumber] << " ] [ #CHouf_Chi_CHwiwch_Dik_Jih ] !!." << std::endl;
-	}
+	std::cout << " Yuuuum Yuuum !! [ ENERY BOOST ] T-Y HP = [ "<< this->_HitPoints <<" ] -- Energy = [ " << this->_EnergyPoints <<" ][ ClapTrap ]!!" << std::endl;
 }

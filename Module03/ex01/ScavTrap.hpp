@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/07 09:53:43 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/09 15:42:23 by ibouhiri         ###   ########.fr       */
+/*   Created: 2021/03/09 16:06:39 by ibouhiri          #+#    #+#             */
+/*   Updated: 2021/03/09 16:22:48 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-# include <string>
-# include <iostream>
+# include "FragTrap.hpp"
 
-class FragTrap
+class ScavTrap
 {
+
 private:
 
-	FragTrap( void );
-	
+	ScavTrap( void );
 	std::string _Name;
 	
 	int	_HitPoints;
@@ -32,20 +31,22 @@ private:
 	int _MelleAttackDamage;
 	int _RangedAttackDamage;
 	int _ArmorDamagereduction;
-	
-public:
 
-	FragTrap( std::string name );
-	FragTrap( FragTrap const& CpObj);
-	~FragTrap ( void );
+public:
 	
-	FragTrap& operator=(FragTrap const& obj);
+
+	ScavTrap( std::string name );
+	ScavTrap( ScavTrap const& CpObj);
+	~ScavTrap ( void );
 	
-	void rangedAttack(std::string const & target);
-	void meleeAttack(std::string const & target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
-	void vaulthunter_dot_exe(std::string const & target);
+	ScavTrap& operator=( ScavTrap const& obj );
+	
+	void rangedAttack( std::string const & target );
+	void meleeAttack( std::string const & target );
+	void takeDamage( unsigned int amount );
+	void beRepaired( unsigned int amount );
+	void challengeNewcomer( void );
+
 };
 
 #endif

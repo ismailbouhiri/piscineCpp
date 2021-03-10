@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 09:53:41 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/09 16:00:38 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/09 16:18:58 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 FragTrap::FragTrap( void )
 {
-	std::cout << "[ DEFAULT CONSTRUCTION CALLED !! ]" << std::endl;
+	std::cout << "[ DEFAULT CONSTRUCTION CALLED !! ] - [ FRAGTRAP ]" << std::endl;
 }
 
 FragTrap::~FragTrap( void )
 {
-	std::cout << "[DESTRUCTOR CALLED !! ]" << std::endl;
+	std::cout << "[DESTRUCTOR CALLED !! ] - [ FRAGTRAP ]" << std::endl;
 }
 
 FragTrap::FragTrap( std::string name ) : _Name(name)
 {
-	std::cout << "[ OVERLOADING CONSTRUCTION CALLED !! ]" << std::endl;
+	std::cout << "[ OVERLOADING CONSTRUCTION CALLED !! ] - [ FRAGTRAP ]" << std::endl;
 	
 	this->_HitPoints			=	100;
 	this->_MaxHitPoints 		=	100;
@@ -39,7 +39,7 @@ FragTrap::FragTrap( std::string name ) : _Name(name)
 
 FragTrap::FragTrap( FragTrap const& CpObj)
 {
-	std::cout << "[ COPY CONSTRUCTION CALLED !! ]" << std::endl;
+	std::cout << "[ COPY CONSTRUCTION CALLED !! ] - [ FRAGTRAP ]" << std::endl;
 	*this = CpObj;
 }
 	
@@ -61,20 +61,20 @@ FragTrap& FragTrap::operator=(FragTrap const& obj)
 void	FragTrap::rangedAttack(std::string const & target)
 {
 	std::cout << "FR4G-TP [ " << this->_Name << " ] attacks " << target <<
-	" at range, causing " << this->_RangedAttackDamage << " points of damage! *_* !." << std::endl;
+	" at range, causing " << this->_RangedAttackDamage << " points of damage! *_* [ FRAGTRAP ]!." << std::endl;
 }
 
 void	FragTrap::meleeAttack(std::string const & target)
 {
 	std::cout << "FR4G-TP [ " << this->_Name << " ] attacks " << target <<
-	" at range, causing " << this->_MelleAttackDamage << " points of damage! *_* !." << std::endl;
+	" at range, causing " << this->_MelleAttackDamage << " points of damage! *_* [ FRAGTRAP ]!." << std::endl;
 }
 
 void	FragTrap::takeDamage(unsigned int amount)
 {
 	amount				=	( (int)amount <= this->_ArmorDamagereduction ) ? 0 : amount - this->_ArmorDamagereduction;
 	this->_HitPoints 	=	( (int)amount > this->_HitPoints ) ? 0 : this->_HitPoints - amount;	
-	std::cout << "FR4G-TP [ " << this->_Name << " ] His Take a damage!! OH LALALA!! [ " << this->_HitPoints << " ] [ #CHouf_Chi_CHwiwch_Dik_Jih ] !!." << std::endl;
+	std::cout << "FR4G-TP [ " << this->_Name << " ] His Take a damage!! OH LALALA!! [ " << this->_HitPoints << " ] [ #CHouf_Chi_CHwiwch_Dik_Jih ] [ FRAGTRAP ]!!." << std::endl;
 }
 
 void	FragTrap::beRepaired(unsigned int amount)
@@ -91,7 +91,7 @@ void	FragTrap::beRepaired(unsigned int amount)
 		Energy				 =	( (int)amount >= this->_MaxEnergyPoints ) ? this->_MaxEnergyPoints : amount;
 		this->_EnergyPoints	 =  ( Energy + this->_EnergyPoints > 100 ) ? 100 : Energy + this->_EnergyPoints;	
 	}
-	std::cout << " Yuuuum Yuuum !! [ ENERY BOOST ] T-Y HP = [ "<< this->_HitPoints <<" ] -- Energy = [ " << this->_EnergyPoints <<" ]!!" << std::endl;
+	std::cout << " Yuuuum Yuuum !! [ ENERY BOOST ] T-Y HP = [ "<< this->_HitPoints <<" ] -- Energy = [ " << this->_EnergyPoints <<" ][ FRAGTRAP ]!!" << std::endl;
 }
 
 void FragTrap::vaulthunter_dot_exe(std::string const & target)
@@ -102,12 +102,12 @@ void FragTrap::vaulthunter_dot_exe(std::string const & target)
 	RandomNumber = rand() % 5;
 	if (this->_EnergyPoints < 25)
 	{
-		std::cout << "[ YOU DON'T HAVE ENOUGH ENERGY ] !!" << std::endl;
+		std::cout << "[ YOU DON'T HAVE ENOUGH ENERGY ][ FRAGTRAP ] !!" << std::endl;
 	}
 	else
 	{
 		this->_EnergyPoints -= 25;
 		std::cout << "FR4G-TP [ " << this->_Name << " ] ATTACK " << target <<
-		" With His best Sort > [ " << RandomAttack[RandomNumber] << " ] [ #CHouf_Chi_CHwiwch_Dik_Jih ] !!." << std::endl;
+		" With His best Sort > [ " << RandomAttack[RandomNumber] << " ] [ #CHouf_Chi_CHwiwch_Dik_Jih ][ FRAGTRAP ] !!." << std::endl;
 	}
 }
