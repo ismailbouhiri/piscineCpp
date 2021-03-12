@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:56:26 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/12 10:22:57 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/12 10:43:05 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ Peon::~Peon( void )
 	std::cout << "Bleuark..." << std::endl;
 }
 
-Peon::Peon( std::string Name) : _Name(Name)
+Peon::Peon( std::string Name) 
 {
+	this->_Name = Name;
 	std::cout << "Some random victim called " << this->_Name << " just appeared!"<< std::endl;
 	std::cout << "Zog zog." << std::endl;
 }
@@ -43,10 +44,6 @@ Peon&	Peon::operator=(Peon const& obj)
 	return (*this);
 }
 
-std::string		Peon::getName( void ) const 
-{
-	return this->_Name;
-}
 
 void	Peon::getPolymorphed( void ) const
 {

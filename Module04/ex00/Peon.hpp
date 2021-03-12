@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:56:29 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/12 10:15:59 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/12 10:44:07 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,13 @@
 
 # include <string>
 # include <iostream>
-
-class Peon
+# include  "Victim.hpp"
+class Peon : virtual public Victim
 {
 
 private:
 
 	Peon( void );
-	std::string _Name;
 
 public:
 	
@@ -31,9 +30,7 @@ public:
 	Peon( Peon const& CpObj);
 	Peon& operator=(Peon const& obj);
 
-	std::string	getName( void ) const;
-
-	void	getPolymorphed( void ) const;
+	virtual void	getPolymorphed( void ) const;
 };
 
 std::ostream& operator<<(std::ostream &out, Peon const& obj );

@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:56:38 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/12 10:15:43 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/12 10:41:32 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Victim
 {
 
-private:
+protected:
 
 	Victim( void );
 
@@ -34,7 +34,7 @@ public:
 	
 	std::string	getName( void ) const;
 	
-	void	getPolymorphed( void ) const;
+	virtual void	getPolymorphed( void ) const;
 };
 
 std::ostream& operator<<(std::ostream &out, Victim const& obj );
