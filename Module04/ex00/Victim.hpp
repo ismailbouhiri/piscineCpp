@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:56:38 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/11 19:07:18 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/12 10:15:43 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,15 @@ private:
 	Victim( void );
 
 	std::string _Name;
-	std::string _Title;
 
 public:
 	
 	~Victim ( void );
-	Victim( std::string Name, std::string Title );
+	Victim( std::string Name);
 	Victim( Victim const& CpObj);
 	Victim& operator=(Victim const& obj);
 	
-	std::string	Victim::getName( void ) const;
+	std::string	getName( void ) const;
 	
 	void	getPolymorphed( void ) const;
 };

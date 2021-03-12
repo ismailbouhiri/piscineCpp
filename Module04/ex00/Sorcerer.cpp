@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:56:31 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/11 17:14:54 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/12 10:24:27 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Sorcerer::~Sorcerer( void )
 
 Sorcerer::Sorcerer( std::string Name, std::string Title ) : _Name(Name), _Title(Title)
 {
-	std::cout << this->_Name<< ", " << this->_Title << ", is born!."<< std::endl;
+	std::cout << this->_Name<< ", " << this->_Title << ", is born!"<< std::endl;
 	
 }
 
@@ -54,9 +54,20 @@ std::string	Sorcerer::getTitle( void ) const
 	return this->_Title;
 }
 
+void	Sorcerer::polymorph(Victim const &v) const
+{
+	v.getPolymorphed();
+}
+
+void	Sorcerer::polymorph(Peon const &v) const
+{
+	v.getPolymorphed();
+}
+
+
 std::ostream& operator<<(std::ostream &out, Sorcerer const& obj )
 {
-	out << "I am "<< obj.getName() << ", " << obj.getTitle() << ", and I like ponies!";
+	out << "I am "<< obj.getName() << ", " << obj.getTitle() << ", and I like ponies!" << std::endl;
 	return out;
 }
 
