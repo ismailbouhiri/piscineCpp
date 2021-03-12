@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:56:26 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/12 10:43:05 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/12 12:16:35 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	Peon::getPolymorphed( void ) const
 	std::cout << this->_Name << " has been turned into a pink pony!" << std::endl;
 }
 
-std::ostream& operator<<(std::ostream &out, Peon const& obj )
+std::ostream&	operator<<(std::ostream &out, Peon const& obj )
 {
 	out << "I'm " << obj.getName() << " and I like otters!" << std::endl;
 	return out;
