@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 10:54:31 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/12 16:25:00 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/12 19:29:46 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ protected:
 public:
 
 	Enemy(int hp, std::string const & type);
-	~Enemy ( void );
+	virtual ~Enemy ( void );
 	Enemy(Enemy const& CObj);
 	Enemy& operator=(Enemy const& Obj);
 	

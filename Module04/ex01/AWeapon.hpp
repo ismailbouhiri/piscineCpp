@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 10:54:22 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/12 11:46:42 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/12 18:41:47 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,16 @@ protected:
 
 public:
 
-	AWeapon(std::string const & name, int apcost, int damage);
+	AWeapon( std::string const & name, int apcost, int damage );
 	~AWeapon ( void );
-	AWeapon(AWeapon const& CObj);
+	AWeapon( AWeapon const& CObj );
 	
-	AWeapon& operator=(AWeapon const& Obj);
+	AWeapon&	operator=( AWeapon const& Obj );
 	std::string  getName( void ) const;
 
 	int getAPCost( void ) const;
 	int getDamage( void ) const;
-	virtual void attack() const = 0;
+	virtual void attack( void ) const = 0;
 
 };
 

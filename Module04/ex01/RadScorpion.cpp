@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 10:54:45 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/12 16:32:34 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/12 19:33:43 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ RadScorpion::~RadScorpion ( void )
 
 RadScorpion::RadScorpion(RadScorpion const& CObj)
 {
-	std::cout << "[ COPY CONSTRUCTION CALLED !! ]" << std::endl;
 	*this = CObj; 
 }
 	
@@ -34,5 +33,7 @@ RadScorpion& RadScorpion::operator=(RadScorpion const& Obj)
 {
 	this->_Type		=	Obj._Type;
 	this->_HitPoint	=	Obj._HitPoint;
+
+	return *this;
 }
 
