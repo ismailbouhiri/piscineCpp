@@ -10,3 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+# include "Cure.hpp"
+
+Cure::Cure( void )
+{
+    this->_Type = "c    ure";
+    this->_xp = 0;
+}
+
+Cure::Cure( Cure const& CObj )
+{
+    *this = CObj;
+}
+
+Cure& Cure::operator= (Cure const& CObj )
+{
+    this->_xp = CObj.getXP();
+    this->_Type = CObj.getType();
+
+    return *this;
+}
+
+Cure::~Cure( void )
+{}
+
+AMateria* Cure::clone( void ) const
+{
+    AMateria *Materia = new Cure;
+    return Materia;
+}
