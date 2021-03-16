@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 11:23:05 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/16 15:50:21 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/16 16:34:13 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ MateriaSource&	MateriaSource::operator=( MateriaSource const& CObj )
             this->LearnTab[i] = NULL;
         }
         delete [] this->LearnTab;
+		this->LearnTab = nullptr;
     }
     
     this->LearnTab = new AMateria*[5];
@@ -61,6 +62,7 @@ MateriaSource::~MateriaSource ( void )
 			}
         }
         delete [] this->LearnTab;
+		this->LearnTab = nullptr;
     }
 }
 

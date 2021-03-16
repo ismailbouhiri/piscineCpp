@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 11:22:45 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/16 15:52:22 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/16 16:34:40 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,14 @@ Character& Character::operator=( Character const& CObj )
 			}
         }
         delete [] this->_Materias;
+		this->_Materias = nullptr;
     }
-    
+
     this->_Materias = new AMateria*[5];
     this->_Materias[4] = NULL;
     for ( int i = 0; i < 4; i++ )
     {
-        if (CObj._Materias[i])
+        if ( CObj._Materias[i] )
             this->_Materias[i] = CObj._Materias[i]->clone();
         else
             this->_Materias[i] = NULL;
@@ -56,18 +57,15 @@ Character& Character::operator=( Character const& CObj )
 
 Character::~Character ( void )
 {
-    if (this->_Materias)
+    for ( int i = 0; i < 4; i++ )
     {
-        for ( int i = 0; i < 4; i++ )
-        {
-            if ( this->_Materias[i] )
-			{
-				delete this->_Materias[i];
-				this->_Materias[i] = NULL;
-			}
-        }
-        delete [] this->_Materias;
+        if ( this->_Materias[i] )
+		{
+			delete this->_Materias[i];
+			this->_Materias[i] = NULL;
+		}
     }
+    delete [] this->_Materias;
 }
 
 std::string const & Character::getName( void ) const
