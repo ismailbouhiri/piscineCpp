@@ -6,27 +6,25 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 11:22:50 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/14 11:22:51 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/16 11:31:58 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Cure.hpp"
 
-Cure::Cure( void )
+Cure::Cure( void ):AMateria("cure")
 {
-    this->_Type = "c    ure";
-    this->_xp = 0;
 }
 
-Cure::Cure( Cure const& CObj )
+Cure::Cure( Cure const& CObj ):AMateria(CObj)
 {
     *this = CObj;
 }
 
 Cure& Cure::operator= (Cure const& CObj )
 {
-    this->_xp = CObj.getXP();
-    this->_Type = CObj.getType();
+    this->setXP(CObj.getXP());
+    this->setType(CObj.getType());
 
     return *this;
 }

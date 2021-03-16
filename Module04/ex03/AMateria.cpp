@@ -6,13 +6,16 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 11:22:41 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/14 11:22:42 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/16 15:30:47 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "AMateria.hpp"
 
 AMateria::AMateria(std::string const& type): _xp(0), _Type(type)
+{}
+
+AMateria::AMateria( void )
 {}
 
 AMateria::AMateria(AMateria const & CObj)
@@ -22,6 +25,16 @@ AMateria::AMateria(AMateria const & CObj)
 
 AMateria::~AMateria ( void )
 {}
+
+void AMateria::setXP( unsigned int xp)
+{
+    this->_xp = xp;
+}
+
+void AMateria::setType( std::string const& type )
+{
+    this->_Type = type;
+}
 
 AMateria& AMateria::operator=(AMateria const & CObj)
 {

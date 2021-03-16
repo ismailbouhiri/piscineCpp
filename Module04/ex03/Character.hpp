@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 11:22:48 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/14 11:22:49 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/16 12:11:51 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ public:
     Character( std::string const& name );
     Character( Character const& CObj );
     Character& operator=( Character const& CObj );
-    ~Character ( void );
+    virtual ~Character ( void );
 
     virtual std::string const & getName( void ) const;
     virtual void equip(AMateria* m);

@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 11:23:08 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/14 11:23:09 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/16 12:14:57 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,17 @@ class MateriaSource : virtual public IMateriaSource
 
 private:
 
+    AMateria** LearnTab;
 
 public:
 
     MateriaSource( void );
+    MateriaSource( MateriaSource const& CObj );
+    MateriaSource& operator=( MateriaSource const& CObj );
     ~MateriaSource ( void );
+
+    virtual void learnMateria( AMateria* Learn );
+    virtual AMateria* createMateria( std::string const & type );
 };
 
 #endif

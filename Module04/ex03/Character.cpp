@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 11:22:45 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/14 11:22:46 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/16 15:52:22 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,11 @@ Character& Character::operator=( Character const& CObj )
     {
         for ( int i = 0; i < 4; i++ )
         {
-            delete this->_Materias[i];
-            this->_Materias[i] = NULL;
+            if ( this->_Materias[i] )
+			{
+				delete this->_Materias[i];
+				this->_Materias[i] = NULL;
+			}
         }
         delete [] this->_Materias;
     }
@@ -48,6 +51,7 @@ Character& Character::operator=( Character const& CObj )
         else
             this->_Materias[i] = NULL;
     }
+    return *this;
 }
 
 Character::~Character ( void )
@@ -56,8 +60,11 @@ Character::~Character ( void )
     {
         for ( int i = 0; i < 4; i++ )
         {
-            delete this->_Materias[i];
-            this->_Materias[i] = NULL;
+            if ( this->_Materias[i] )
+			{
+				delete this->_Materias[i];
+				this->_Materias[i] = NULL;
+			}
         }
         delete [] this->_Materias;
     }
@@ -74,7 +81,10 @@ void Character::equip(AMateria* m)
     for (int i = 0; i < 4; i++)
     {
         if (!this->_Materias[i])
-            this->_Materias[i] = m;
+        {
+            this->_Materias[i] = m->clone();
+            return ;
+        }
     }
 }
 
@@ -83,15 +93,13 @@ void Character::unequip(int idx)
     if (idx >= 0 && idx < 4)
     {
         this->_Materias[idx] = NULL;
-        // if (idx < 3 )
-        // {
-
-        // }
     }
 }
 
 void Character::use(int idx, ICharacter& target)
 {
     if (idx >= 0 && idx < 4)
+    {
         this->_Materias[idx]->use(target);
+    }
 }
