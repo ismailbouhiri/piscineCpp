@@ -13,5 +13,18 @@
 #ifndef MATERIASOURCE_HPP
 #define MATERIASOURCE_HPP
 
+# include "IMateriaSource.hpp"
+
+class MateriaSource : virtual public IMateriaSource
+{
+
+private:
+
+
+public:
+
+    MateriaSource( void );
+    ~MateriaSource ( void );
+};
 
 #endif

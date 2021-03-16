@@ -44,11 +44,11 @@ unsigned int    AMateria::getXP( void ) const
 void            AMateria::use(ICharacter& target)
 {
     this->_xp += 10;
-    if (this->getType() == "ice")
+    if (!this->getType().compare("ice"))
     {
         std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
     }
-    else if (this->getType() == "cure")
+    else if (!this->getType().compare("cure"))
     {
         std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
     }

@@ -13,4 +13,29 @@
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
 
+# include "ICharacter.hpp"
+
+class Character : virtual public ICharacter
+{
+
+private:
+
+    Character( void );
+
+    std::string _Name; 
+    AMateria** _Materias;
+
+public:
+
+    Character( std::string const& name );
+    Character( Character const& CObj );
+    Character& operator=( Character const& CObj );
+    ~Character ( void );
+
+    virtual std::string const & getName( void ) const;
+    virtual void equip(AMateria* m);
+    virtual void unequip(int idx);
+    virtual void use(int idx, ICharacter& target);
+};
+
 #endif
