@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 11:44:36 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/18 12:49:48 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/18 14:36:09 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ public:
 		public:
 			virtual const char* higher() const throw()
 			{
-				std::cout << "Your Grade It too higher than normal!! " << std::endl;
+				return( "Your Grade It too higher than normal!! " );
 			}
 	};
 	
@@ -56,5 +56,5 @@ public:
 	};
 };
 
-std::ofstream& operator=( ofstream const& out, Bureaucrat const& Obj );
+std::ostream& operator<<( std::ostream& out, Bureaucrat const& Obj );
 #endif
