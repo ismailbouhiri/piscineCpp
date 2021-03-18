@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 11:44:36 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/18 14:36:09 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/18 18:25:13 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ public:
 
 
 	
-	class GradeTooHighException : virtual public std::exception
+	class GradeTooHighException : public std::exception
 	{
 		public:
-			virtual const char* higher() const throw()
+			virtual const char* what() const throw()
 			{
 				return( "Your Grade It too higher than normal!! " );
 			}
@@ -49,7 +49,7 @@ public:
 	class GradeTooLowException : virtual public std::exception
 	{
 		public:
-			virtual const char* lower() const throw()
+			virtual const char* what() const throw()
 			{
 				return ( "Your Grade It too lower than normal!! " );
 			}

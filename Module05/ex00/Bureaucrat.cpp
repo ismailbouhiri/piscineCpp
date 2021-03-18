@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 11:44:34 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/18 14:31:15 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/18 18:27:38 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,17 @@
 
 Bureaucrat::Bureaucrat( std::string name, int grade ) : _Name(name)
 {
-	try
+
+	if (grade > 150)
 	{
-		if (grade > 150)
-		{
-			throw GradeTooLowException();
-		}
-		else if (grade < 1)
-		{
-			throw GradeTooHighException();
-		}
-		else{
-			this->_Grade = grade;
-		}
+		throw GradeTooLowException();
 	}
-	catch( Bureaucrat::GradeTooLowException& e )
+	else if (grade < 1)
 	{
-		std::cout << e.lower() << std::endl;
+		throw GradeTooHighException();
 	}
-	catch( Bureaucrat::GradeTooHighException& e )
-	{
-		std::cout << e.higher() << std::endl;
-	}
-	catch ( std::exception& e )
-	{
-		std::cout << e.what() << std::endl;
+	else{
+		this->_Grade = grade;
 	}
 }
 
@@ -65,7 +51,7 @@ void	Bureaucrat::incrementGrade( void )
 	}
 	catch ( Bureaucrat::GradeTooHighException& e )
 	{
-		std::cerr << e.higher() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 	catch ( std::exception& e )
 	{
@@ -83,7 +69,7 @@ void	Bureaucrat::decrementGrade( void )
 	}
 	catch( Bureaucrat::GradeTooLowException& e )
 	{
-		std::cerr << e.lower() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 	catch ( std::exception& e )
 	{
