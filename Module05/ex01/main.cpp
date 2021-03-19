@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 11:44:38 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/19 12:04:32 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/19 15:47:24 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,32 +15,35 @@
 
 int		main( void )
 {
-    int grade = 10;
-    int required_grade = 50;
+    int ExecGrade = 10;
+    int signGrade = 50;
+
     try
     {
-        Form frm("Passeport", required_grade, grade);
-        Bureaucrat inst("mbani", grade);
+        Form frm("frm", signGrade, ExecGrade);
+        Bureaucrat inst("inst", ExecGrade);
         std::cout << inst << frm;
         frm.beSigned(inst);
-        std::cout << frm;
+        inst.signForm(frm);
     }
-    catch (std::exception & e)
+    catch (std::exception& e)
     {
-        std::cout <<e.what()<< std::endl;
+        std::cout << e.what() << std::endl;
     }
-    std::cout << std::endl;
-    grade = 100;
-    required_grade = 3;
-    Form frm1("National ID", required_grade, grade);
+    std::cout << "//----------------------------------------------------------//" << std::endl;
+    ExecGrade = 100;
+    signGrade = 3;
+    Form frm1("frm1", signGrade, ExecGrade);
+
     try 
     {
-        Bureaucrat inst2("mamoussa", grade);
+        Bureaucrat inst2("inst2", ExecGrade);
         std::cout << inst2 << frm1;
         frm1.beSigned(inst2);
+        inst2.signForm(frm1);
         std::cout << frm1;
     }
-    catch (std::exception & e)
+    catch (std::exception& e)
     {
         std::cout << e.what() << std::endl;
     }

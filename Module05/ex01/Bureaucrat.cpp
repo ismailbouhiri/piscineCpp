@@ -6,13 +6,13 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 11:44:34 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/19 12:14:22 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/19 15:32:12 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat( std::string name, int grade ) : _Name(name)
+Bureaucrat::Bureaucrat(  const std::string name, int grade ) : _Name(name)
 {
 	if (grade > 150)
 	{
@@ -30,7 +30,7 @@ Bureaucrat::Bureaucrat( std::string name, int grade ) : _Name(name)
 Bureaucrat::~Bureaucrat( void )
 {}
 
-std::string const Bureaucrat::getName( void ) const
+const std::string	Bureaucrat::getName( void ) const
 {
 	return this->_Name;
 }
@@ -53,15 +53,15 @@ void	Bureaucrat::decrementGrade( void )
 	if ( this->_Grade > 150 )
 		throw Bureaucrat::GradeTooLowException();
 }
-void	Bureaucrat::signForm( Form const& form)
+void	Bureaucrat::signForm( Form const& form) const
 {
 	if (form.getSign())
 	{
-		std::cout << "<" << this->_Name << "> signs <" << form.getName() << ">" << std::endl;
+		std::cout << "< " << this->_Name << " > signs < " << form.getName() << " >" << std::endl;
 	}
 	else
 	{
-		std::cout << "<" << this->_Name << "> cannot sign <" << form.getName() << "> because <Bureaucrat's grade lower than form's grade>" << std::endl;
+		std::cout << "< " << this->_Name << " > cannot sign < " << form.getName() << " > because < Bureaucrat's grade lower than form's grade >" << std::endl;
 	}
 }
 

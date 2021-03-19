@@ -6,15 +6,16 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 16:23:28 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/19 12:18:38 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/19 15:31:44 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Form.hpp"
 
 Form::Form( std::string name, const int singGrade, const int execGrade ) : _Name(name),
-_Sign(false), _SingGrade(singGrade), _ExecGrade(execGrade)
+_SingGrade(singGrade), _ExecGrade(execGrade)
 {
+	this->_Sign = false;
 	if (_SingGrade > 150 || _ExecGrade > 150)
 	{
 		throw Form::GradeTooLowException();
@@ -38,12 +39,12 @@ bool				Form::getSign(void) const
 	return this->_Sign;
 }
 
-const int			Form::getExecGrade(void) const
+const int&		Form::getExecGrade(void) const
 {
 	return this->_ExecGrade;
 }
 
-const	int			Form::getSignGrade(void) const
+const int&			Form::getSignGrade(void) const
 {
 	return this->_SingGrade;
 }
@@ -58,6 +59,6 @@ void				Form::beSigned(Bureaucrat const& bur)
 
 std::ostream&		operator<<( std::ostream& out, Form const& Obj )
 {
-	out << "< " << Obj.getName() << " >" << ", form grades ExecGrade < " << Obj.getExecGrade() << " > SingGrade <" << Obj.getSignGrade() << std::endl;
+	out << "< " << Obj.getName() << " >" << ", form grades ExecGrade < " << Obj.getExecGrade() << " > SingGrade < " << Obj.getSignGrade() << " >."<<  std::endl;
 	return out;
 }
