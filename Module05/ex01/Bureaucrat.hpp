@@ -6,15 +6,16 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 11:44:36 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/18 14:36:09 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/19 12:24:00 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
-# include <string>
-# include <iostream>
+# include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -33,23 +34,21 @@ public:
 
 	void	incrementGrade( void );
 	void	decrementGrade( void );
-		
+	void	signForm( Form const& form);
 
-
-	
-	class GradeTooHighException : virtual public std::exception
+	class GradeTooHighException : public std::exception
 	{
 		public:
-			virtual const char* higher() const throw()
+			virtual const char* what() const throw()
 			{
 				return( "Your Grade It too higher than normal!! " );
 			}
 	};
 	
-	class GradeTooLowException : virtual public std::exception
+	class GradeTooLowException : public std::exception
 	{
 		public:
-			virtual const char* lower() const throw()
+			virtual const char* what() const throw()
 			{
 				return ( "Your Grade It too lower than normal!! " );
 			}

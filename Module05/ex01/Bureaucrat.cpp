@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 11:44:34 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/18 14:31:15 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/19 12:14:22 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,16 @@
 
 Bureaucrat::Bureaucrat( std::string name, int grade ) : _Name(name)
 {
-	try
+	if (grade > 150)
 	{
-		if (grade > 150)
-		{
-			throw GradeTooLowException();
-		}
-		else if (grade < 1)
-		{
-			throw GradeTooHighException();
-		}
-		else{
-			this->_Grade = grade;
-		}
+		throw Bureaucrat::GradeTooLowException();
 	}
-	catch( Bureaucrat::GradeTooLowException& e )
+	else if (grade < 1)
 	{
-		std::cout << e.lower() << std::endl;
+		throw Bureaucrat::GradeTooHighException();
 	}
-	catch( Bureaucrat::GradeTooHighException& e )
-	{
-		std::cout << e.higher() << std::endl;
-	}
-	catch ( std::exception& e )
-	{
-		std::cout << e.what() << std::endl;
+	else{
+		this->_Grade = grade;
 	}
 }
 
@@ -57,39 +42,29 @@ int	Bureaucrat::getGrade( void ) const
 
 void	Bureaucrat::incrementGrade( void )
 {
-	try
-	{
-		this->_Grade -= 1;
-		if ( this->_Grade < 1 )
-			throw GradeTooHighException();
-	}
-	catch ( Bureaucrat::GradeTooHighException& e )
-	{
-		std::cerr << e.higher() << std::endl;
-	}
-	catch ( std::exception& e )
-	{
-		std::cerr << e.what() << std::endl;
-	}
+	this->_Grade -= 1;
+	if ( this->_Grade < 1 )
+		throw Bureaucrat::GradeTooHighException();
 }
 
 void	Bureaucrat::decrementGrade( void )
 {
-	try
-	{
-		this->_Grade += 1;
-		if ( this->_Grade > 150 )
-			throw GradeTooLowException();
-	}
-	catch( Bureaucrat::GradeTooLowException& e )
-	{
-		std::cerr << e.lower() << std::endl;
-	}
-	catch ( std::exception& e )
-	{
-		std::cerr << e.what() << std::endl;
-	}	
+	this->_Grade += 1;
+	if ( this->_Grade > 150 )
+		throw Bureaucrat::GradeTooLowException();
 }
+void	Bureaucrat::signForm( Form const& form)
+{
+	if (form.getSign())
+	{
+		std::cout << "<" << this->_Name << "> signs <" << form.getName() << ">" << std::endl;
+	}
+	else
+	{
+		std::cout << "<" << this->_Name << "> cannot sign <" << form.getName() << "> because <Bureaucrat's grade lower than form's grade>" << std::endl;
+	}
+}
+
 
 std::ostream& operator<<( std::ostream& out, Bureaucrat const& Obj )
 {
