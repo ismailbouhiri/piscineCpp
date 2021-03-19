@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:56:31 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/12 10:24:27 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/18 16:20:20 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 
 Sorcerer::Sorcerer( void )
-{
-	std::cout << "[ DEFAULT CONSTRUCTION CALLED !! ]" << std::endl;
-}
+{}
 
 Sorcerer::~Sorcerer( void )
 {
@@ -31,13 +29,11 @@ Sorcerer::Sorcerer( std::string Name, std::string Title ) : _Name(Name), _Title(
 
 Sorcerer::Sorcerer( Sorcerer const& CpObj)
 {
-	std::cout << "[ COPY CONSTRUCTION CALLED !! ]" << std::endl;
 	*this = CpObj;
 }
 
 Sorcerer&	Sorcerer::operator=(Sorcerer const& obj)
 {
-	std::cout << "[ ASSIGNATION OPERATOR CALLED !! ] " << std::endl;
 	this->_Name		=	obj._Name;
 	this->_Title	=	obj._Title;
 
@@ -59,15 +55,8 @@ void	Sorcerer::polymorph(Victim const &v) const
 	v.getPolymorphed();
 }
 
-void	Sorcerer::polymorph(Peon const &v) const
-{
-	v.getPolymorphed();
-}
-
-
 std::ostream& operator<<(std::ostream &out, Sorcerer const& obj )
 {
 	out << "I am "<< obj.getName() << ", " << obj.getTitle() << ", and I like ponies!" << std::endl;
 	return out;
 }
-

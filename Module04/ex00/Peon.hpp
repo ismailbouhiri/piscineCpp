@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:56:29 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/12 12:18:45 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/18 16:09:58 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <string>
 # include <iostream>
 # include  "Victim.hpp"
-class Peon : virtual public Victim
+class Peon : public Victim
 {
 
 private:

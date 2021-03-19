@@ -6,27 +6,22 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:56:26 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/12 12:16:35 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/18 16:20:12 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Peon.hpp"
 
 Peon::Peon( void )
-{
-	std::cout << "[ DEFAULT CONSTRUCTION CALLED !! ]" << std::endl;
-}
+{}
 
 Peon::~Peon( void )
 {
-	std::cout << "Victim " << this->_Name << " just died for no apparent reason!" << std::endl;
 	std::cout << "Bleuark..." << std::endl;
 }
 
-Peon::Peon( std::string Name) 
+Peon::Peon( std::string Name): Victim::Victim(Name)
 {
-	this->_Name = Name;
-	std::cout << "Some random victim called " << this->_Name << " just appeared!"<< std::endl;
 	std::cout << "Zog zog." << std::endl;
 }
 

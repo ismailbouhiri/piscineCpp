@@ -1,29 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/10 16:56:15 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/18 16:00:04 by ibouhiri         ###   ########.fr       */
+/*   Created: 2021/03/18 16:23:28 by ibouhiri          #+#    #+#             */
+/*   Updated: 2021/03/18 18:33:47 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Sorcerer.hpp"
-# include "Victim.hpp"
-# include "Peon.hpp"
-
-int main()
-{
-	Sorcerer robert("Robert", "the Magnificent");
-	Victim jim("Jimmy");
-	Peon joe("Joe");
-
-	std::cout << robert << jim << joe;
-	robert.polymorph(jim);
-	robert.polymorph(joe);
-	
-	return ( 0 );
-
-}
+# include "Form.hpp"

@@ -6,16 +6,14 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:56:35 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/12 10:14:04 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/18 16:20:17 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Victim.hpp"
 
 Victim::Victim( void )
-{
-	std::cout << "[ DEFAULT CONSTRUCTION CALLED !! ]" << std::endl;
-}
+{}
 
 Victim::~Victim( void )
 {
@@ -29,13 +27,11 @@ Victim::Victim( std::string Name) : _Name(Name)
 
 Victim::Victim( Victim const& CpObj)
 {
-	std::cout << "[ COPY CONSTRUCTION CALLED !! ]" << std::endl;
 	*this = CpObj;
 }
 
 Victim&	Victim::operator=(Victim const& obj)
 {
-	std::cout << "[ ASSIGNATION OPERATOR CALLED !! ] " << std::endl;
 	this->_Name		=	obj._Name;
 
 	return (*this);

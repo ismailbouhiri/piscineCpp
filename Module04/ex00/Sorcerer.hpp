@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:56:33 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/12 10:08:41 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/18 16:11:20 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ public:
 	std::string getName( void ) const ;
 	std::string getTitle( void ) const ;
 	void polymorph(Victim const &) const;
-	void polymorph(Peon const &) const;
 
 };
 
