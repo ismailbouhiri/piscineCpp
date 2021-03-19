@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 11:44:36 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/18 18:25:13 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/19 10:27:42 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ class Bureaucrat
 	
 private:
 
-	std::string const	_Name;
+	const std::string 		_Name;
 	int					_Grade;	
 
 public:
 	Bureaucrat( std::string name, int grade );
 	~Bureaucrat ( void );
 	
-	std::string const getName( void ) const;
+	const std::string	getName( void ) const;
 	int	getGrade( void ) const;
 
 	void	incrementGrade( void );
