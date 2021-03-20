@@ -6,15 +6,14 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 11:44:34 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/19 10:27:31 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/19 16:20:12 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat( std::string name, int grade ) : _Name(name)
+Bureaucrat::Bureaucrat( const std::string name, int grade ) : _Name(name)
 {
-
 	if (grade > 150)
 	{
 		throw GradeTooLowException();
@@ -30,6 +29,18 @@ Bureaucrat::Bureaucrat( std::string name, int grade ) : _Name(name)
 
 Bureaucrat::~Bureaucrat( void )
 {}
+
+Bureaucrat::Bureaucrat( const Bureaucrat& CObj ) : _Name(CObj.getName())
+{
+	*this = CObj;
+}
+
+Bureaucrat&		Bureaucrat::operator=( const Bureaucrat& CObj )
+{
+	this->_Grade = CObj.getGrade();
+
+	return *this;
+}
 
 const std::string  Bureaucrat::getName( void ) const
 {
