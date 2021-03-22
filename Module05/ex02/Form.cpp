@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 16:23:28 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/19 16:32:46 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/21 14:51:44 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ _SingGrade(singGrade), _ExecGrade(execGrade)
 Form::~Form( void )
 {}
 
-const	std::string	Form::getName(void) const
+const	std::string	Form::getName( void ) const
 {
 	return this->_Name;
 }
@@ -45,27 +45,42 @@ Form& Form::operator=( const Form& CObj )
 	return *this;
 }
 
-bool				Form::getSign(void) const
+bool				Form::getSign( void ) const
 {
 	return this->_Sign;
 }
 
-const int&		Form::getExecGrade(void) const
+const int&		Form::getExecGrade( void ) const
 {
 	return this->_ExecGrade;
 }
 
-const int&			Form::getSignGrade(void) const
+const int&			Form::getSignGrade( void ) const
 {
 	return this->_SingGrade;
 }
 
-void				Form::beSigned(Bureaucrat const& bur)
+void				Form::beSigned( Bureaucrat const& bur )
 {
 	if (this->_SingGrade >= bur.getGrade())
 		this->_Sign = true;
 	else
 		throw Form::GradeTooLowException();
+}
+
+const char* Form::GradeTooHighException::what() const throw()
+{
+	return( "Your Grade It too higher than normal - [ Form Class ]!!" );
+}
+
+const char* Form::GradeTooLowException::what() const throw()
+{
+	return ( "Your Grade It too lower than normal [ Form Class ]!! " );
+}
+
+const char* Form::notExec::what() const throw()
+{
+	return ( "You can't Execute This Form!! " );
 }
 
 std::ostream&		operator<<( std::ostream& out, Form const& Obj )

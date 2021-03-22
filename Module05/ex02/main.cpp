@@ -6,47 +6,62 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 11:44:38 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/19 15:54:35 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/22 10:11:42 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
-int		main( void )
+int     main( void )
 {
-    int ExecGrade = 10;
-    int signGrade = 50;
-
+    int grade = 137;
+    int required_grade = 50;
+    ShrubberyCreationForm frm_SH("test");
+    RobotomyRequestForm rbt("test1");
+    PresidentialPardonForm pr("test2");
+    
     try
     {
-        Form frm("frm", signGrade, ExecGrade);
-        Bureaucrat inst("inst", ExecGrade);
-        std::cout << inst << frm;
-        frm.beSigned(inst);
-        inst.signForm(frm);
+        Bureaucrat inst("test3", grade);
+        frm_SH.beSigned(inst);
+        std::cout << frm_SH;
+        inst.executeForm(frm_SH);
     }
-    catch (std::exception& e)
+    catch (std::exception & e)
     {
-        std::cout << e.what() << std::endl;
+        std::cout <<e.what()<< std::endl;
     }
     
-    std::cout << "//----------------------------------------------------------//" << std::endl;
-
-    ExecGrade = 100;
-    signGrade = 3;
-    Form frm1("frm1", signGrade, ExecGrade);
-
+    std::cout << std::endl;
+    grade = 150;
+    required_grade = 3;
     try 
     {
-        Bureaucrat inst2("inst2", ExecGrade);
-        std::cout << inst2 << frm1;
-        frm1.beSigned(inst2);
-        inst2.signForm(frm1);
-        std::cout << frm1;
+        Bureaucrat inst2("test4", grade);
+        inst2.signForm(rbt);
+        inst2.executeForm(rbt);
+        std::cout << rbt;
     }
-    catch (std::exception& e)
+    catch (std::exception & e)
     {
-        std::cout << e.what() << std::endl;
+        std::cout <<e.what()<< std::endl;
     }
+    std::cout << std::endl;
+    grade = 6;
+    try
+    {
+        Bureaucrat inst2("test5", grade);
+        inst2.signForm(pr);
+        std::cout << pr;
+        inst2.executeForm(pr);
+        inst2.incrementGrade();
+        inst2.executeForm(pr);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    
 }

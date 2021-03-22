@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 15:50:54 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/20 11:13:52 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/22 10:02:40 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,18 @@ class ShrubberyCreationForm : public Form
 
 private:
 
-	ShrubberyCreationForm( void ){};
 	std::string _Target;
 	
 public:
 
-	ShrubberyCreationForm( std::string target );
+	ShrubberyCreationForm( const std::string& target );
 	ShrubberyCreationForm( const ShrubberyCreationForm& CObj );
-	~ShrubberyCreationForm ( void );
+	 virtual ~ShrubberyCreationForm ( void );
 
 	ShrubberyCreationForm& operator=( const ShrubberyCreationForm& CObj);
-
-	std::string getTarget( void );
+	virtual void 			execute(Bureaucrat const & executor) const;
+	std::string 			getTarget( void ) const;
+	
 };
 
 
