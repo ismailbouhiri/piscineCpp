@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 11:44:36 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/19 16:17:15 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/21 14:55:27 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Bureaucrat
 
 private:
 
-	Bureaucrat( void ){};
+	Bureaucrat( void );
 	const std::string	_Name;
 	int					_Grade;	
 
@@ -40,19 +40,13 @@ public:
 	class GradeTooHighException : public std::exception
 	{
 		public:
-			virtual const char* what() const throw()
-			{
-				return( "Your Grade It too higher than normal!! " );
-			}
+			virtual const char* what() const throw();
 	};
 	
 	class GradeTooLowException : public std::exception
 	{
 		public:
-			virtual const char* what() const throw()
-			{
-				return ( "Your Grade It too lower than normal!! " );
-			}
+			virtual const char* what() const throw();
 	};
 };
 

@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 11:44:36 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/21 16:39:39 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/22 10:08:33 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ public:
 	void	incrementGrade( void );
 	void	decrementGrade( void );
 	void	signForm( Form const& form) const;
-
+	void 	executeForm(Form const &form);
 	class GradeTooHighException : public std::exception
 	{
 		public:

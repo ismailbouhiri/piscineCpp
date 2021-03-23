@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 11:44:34 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/19 16:18:15 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/21 16:39:49 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,15 @@ void	Bureaucrat::signForm( Form const& form) const
 	}
 }
 
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return( "Your Grade It too higher than normal!! " );
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ( "Your Grade It too lower than normal!! " );
+}
 
 std::ostream& operator<<( std::ostream& out, Bureaucrat const& Obj )
 {

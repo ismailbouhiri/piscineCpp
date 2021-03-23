@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 16:23:32 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/21 14:53:42 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/21 14:50:43 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <string>
 # include <iostream>
+# include <fstream>
+
 # include "Bureaucrat.hpp"
 
 class  Bureaucrat;
@@ -37,25 +39,31 @@ public:
 	Form( const Form& CObj );
 	Form& operator=( const Form& CObj );
 
-	~Form ( void );
+	virtual ~Form ( void );
 	
-	void beSigned(Bureaucrat const& bur);
+	void beSigned( Bureaucrat const& bur );
 	
 	const	std::string	getName(void) const;
-	bool		getSign(void) const;
+	bool				getSign(void) const;
 	const int&			getExecGrade(void) const;
 	const int&			getSignGrade(void) const;
 
-
+	virtual void execute(Bureaucrat const & executor) const = 0;
+	
 	class GradeTooHighException : public std::exception
 	{
-		public:
+		public :
 			virtual const char* what() const throw();
 	};
 	
 	class GradeTooLowException : public std::exception
 	{
-		public:
+		public :
+			virtual const char* what() const throw();
+	};
+	class notExec : public std::exception
+	{
+		public :
 			virtual const char* what() const throw();
 	};
 };
