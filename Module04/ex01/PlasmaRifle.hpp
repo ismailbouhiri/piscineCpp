@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 10:54:38 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/12 15:21:46 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/20 12:41:31 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 # include "AWeapon.hpp"
 
-class PlasmaRifle : virtual public AWeapon
+class PlasmaRifle : public AWeapon
 {
 
 public:
 
 	PlasmaRifle( void );
-	~PlasmaRifle ( void );
+	virtual ~PlasmaRifle ( void );
 	PlasmaRifle(PlasmaRifle const& CObj);
 	
 	PlasmaRifle& operator=(PlasmaRifle const& Obj);

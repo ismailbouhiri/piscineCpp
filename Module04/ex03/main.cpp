@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 11:23:03 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/16 16:32:35 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/20 13:02:37 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,24 +31,24 @@ int main()
     me->use(1, *bob);
 
     /*---------- My tests ----------*/
-    Character *mbani = new Character("mbani");
-    Character *mamoussa = new Character("mamoussa");
-    mbani->equip(tmp); // cure at index 0
-    tmp = src->createMateria("ice");
-    mbani->equip(tmp); // ice at index 1
-    tmp = src->createMateria("ice");
-    mbani->equip(tmp); // ice at index 2
-    mbani->use(0, *me);
-    mbani->use(1, *bob);
-    mbani->use(2, *mbani);
-	std::cout << std::endl;
-    *mamoussa = *mbani;
-    mbani->unequip(2); // remove ice at index 2 from mbani
-    mamoussa->use(0, *me);
-    mamoussa->use(1, *bob);
-    mamoussa->use(2, *mbani);   
-    delete mbani;
-    delete mamoussa;
+    // Character *mbani = new Character("mbani");
+    // Character *mamoussa = new Character("mamoussa");
+    // mbani->equip(tmp); // cure at index 0
+    // tmp = src->createMateria("ice");
+    // mbani->equip(tmp); // ice at index 1
+    // tmp = src->createMateria("ice");
+    // mbani->equip(tmp); // ice at index 2
+    // mbani->use(0, *me);
+    // mbani->use(1, *bob);
+    // mbani->use(2, *mbani);
+	// std::cout << std::endl;
+    // *mamoussa = *mbani;
+    // mbani->unequip(2); // remove ice at index 2 from mbani
+    // mamoussa->use(0, *me);
+    // mamoussa->use(1, *bob);
+    // mamoussa->use(2, *mbani);   
+    // delete mbani;
+    // delete mamoussa;
     /*---------- End ----------*/
 
     

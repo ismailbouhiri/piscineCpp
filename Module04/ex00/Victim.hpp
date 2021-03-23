@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:56:38 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/12 10:41:32 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/20 12:18:52 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ protected:
 
 public:
 	
-	~Victim ( void );
+	virtual ~Victim ( void );
 	Victim( std::string Name);
 	Victim( Victim const& CpObj);
 	Victim& operator=(Victim const& obj);

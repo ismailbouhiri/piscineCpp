@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 09:35:33 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/13 10:43:16 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/20 12:53:59 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,19 @@
 
 # include "ISpaceMarine.hpp"
 
-class AssaultTerminator : virtual public ISpaceMarine
+class AssaultTerminator : public ISpaceMarine
 {
 
 public:
 	AssaultTerminator( void );
-	~AssaultTerminator ( void );
+	virtual ~AssaultTerminator ( void );
+	AssaultTerminator( AssaultTerminator const &CObj);
+	AssaultTerminator& operator=(AssaultTerminator const &CObj);
+
 	virtual ISpaceMarine* clone( void ) const;
 	virtual void battleCry( void ) const;
 	virtual void rangedAttack( void ) const;
 	virtual void meleeAttack( void ) const;
-	AssaultTerminator( AssaultTerminator const &CObj);
-	AssaultTerminator& operator=(AssaultTerminator const &CObj);
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 11:22:43 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/16 12:24:32 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/20 13:04:13 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ public:
     AMateria(std::string const & type);
     AMateria(AMateria const & CObj);
     virtual ~AMateria ( void );
-
     AMateria& operator=(AMateria const & CObj);
+
     std::string const & getType( void ) const;
     unsigned int getXP( void ) const;
     void setXP( unsigned int );

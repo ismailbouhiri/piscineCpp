@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 09:35:44 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/14 11:17:15 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/20 12:51:12 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "ISquad.hpp"
 
-class Squad : virtual public ISquad
+class Squad : public ISquad
 {
 	
 private:
@@ -27,7 +27,7 @@ public:
 
 	Squad( void );
 	Squad( Squad const& CObj );
-	~Squad ( void );
+	virtual ~Squad ( void );
 	
 	Squad& operator=( Squad const& CObj );
 	virtual int getCount( void ) const;

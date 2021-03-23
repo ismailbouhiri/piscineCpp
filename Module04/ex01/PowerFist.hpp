@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 10:54:42 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/12 16:33:12 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/20 12:42:09 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 
 # include "AWeapon.hpp"
 
-class PowerFist : virtual public AWeapon
+class PowerFist : public AWeapon
 {
 
 public:
 
 	PowerFist( void );
-	~PowerFist ( void );
+	virtual ~PowerFist ( void );
 	PowerFist(PowerFist const& CObj);
 	
 	PowerFist& operator=(PowerFist const& Obj);
-	void attack() const;
+	void attack( void ) const;
 
 };
 

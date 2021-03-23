@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 10:54:48 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/12 19:30:38 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/20 12:23:59 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "Enemy.hpp"
 
-class RadScorpion : virtual public Enemy
+class RadScorpion : public Enemy
 {
 	
 public:

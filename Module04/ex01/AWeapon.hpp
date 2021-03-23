@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 10:54:22 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/12 18:41:47 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/20 12:44:56 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ protected:
 public:
 
 	AWeapon( std::string const & name, int apcost, int damage );
-	~AWeapon ( void );
+	virtual ~AWeapon ( void );
 	AWeapon( AWeapon const& CObj );
 	
 	AWeapon&	operator=( AWeapon const& Obj );

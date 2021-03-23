@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:56:33 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/18 16:11:20 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/20 12:14:32 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class Sorcerer
 private:
 
 	Sorcerer( void );
-	
 	std::string _Name;
 	std::string _Title;
 

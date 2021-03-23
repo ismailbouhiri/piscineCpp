@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 09:35:42 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/14 11:18:48 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/20 12:56:39 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,14 @@ Squad::Squad( Squad const& CObj )
 
 Squad& Squad::operator=( Squad const& CObj )
 {
-	for(int i = 0 ; i < this->_CurrentUnits; i++)
-    {
-        delete this->_Marines[i];
-        this->_Marines[i] = NULL;    
-    }
     if (this->_Marines)
     {
+        for(int i = 0 ; i < this->_CurrentUnits; i++)
+        {
+            if ( this->_Marines[i] )
+                delete this->_Marines[i];
+            this->_Marines[i] = NULL;
+        }
         delete [] this->_Marines;
         this->_Marines = NULL;
     }

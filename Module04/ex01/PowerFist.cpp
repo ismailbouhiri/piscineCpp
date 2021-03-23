@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 10:54:40 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/12 19:33:38 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/20 12:42:19 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ PowerFist& PowerFist::operator=(PowerFist const& Obj)
 	return *this;
 }
 
-void PowerFist::attack() const
+void PowerFist::attack( void ) const
 {
 	std::cout << "* pschhh... SBAM! *" << std::endl;
 }

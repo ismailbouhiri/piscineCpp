@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 16:56:26 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/18 16:20:12 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/20 12:22:34 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,11 @@ Peon::Peon( std::string Name): Victim::Victim(Name)
 
 Peon::Peon( Peon const& CpObj)
 {
-	std::cout << "[ COPY CONSTRUCTION CALLED !! ]" << std::endl;
 	*this = CpObj;
 }
 
 Peon&	Peon::operator=(Peon const& obj)
 {
-	std::cout << "[ ASSIGNATION OPERATOR CALLED !! ] " << std::endl;
 	this->_Name		=	obj._Name;
 
 	return (*this);

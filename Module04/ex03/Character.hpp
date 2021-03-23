@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 11:22:48 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/16 12:11:51 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/20 13:03:25 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "ICharacter.hpp"
 
-class Character : virtual public ICharacter
+class Character : public ICharacter
 {
 
 private:

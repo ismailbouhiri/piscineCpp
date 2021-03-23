@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 11:23:08 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/16 12:14:57 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/20 13:03:00 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "IMateriaSource.hpp"
 
-class MateriaSource : virtual public IMateriaSource
+class MateriaSource : public IMateriaSource
 {
 
 private:
@@ -27,7 +27,7 @@ public:
     MateriaSource( void );
     MateriaSource( MateriaSource const& CObj );
     MateriaSource& operator=( MateriaSource const& CObj );
-    ~MateriaSource ( void );
+    virtual ~MateriaSource ( void );
 
     virtual void learnMateria( AMateria* Learn );
     virtual AMateria* createMateria( std::string const & type );

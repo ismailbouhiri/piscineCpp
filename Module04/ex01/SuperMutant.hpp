@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 10:54:53 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/12 19:30:19 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/20 12:29:43 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 # include "Enemy.hpp"
 
-class SuperMutant : virtual public Enemy
+class SuperMutant : public Enemy
 {
-	
+
 public:
 	SuperMutant( void );
 	virtual ~SuperMutant ( void );

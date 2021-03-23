@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 11:44:38 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/23 11:56:09 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/23 12:22:56 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int     main( void )
             rrf->beSigned(inst);
             std::cout << *rrf;
             inst.executeForm(*rrf);//grade is not enough to execute this form;
+            delete rrf;
         }
     }
     catch (std::exception & e)
@@ -64,9 +65,15 @@ int     main( void )
             inst2.executeForm(*rrf2);
         }
     }
+    
     catch (std::exception & e)
     {
-        std::cout <<e.what()<< std::endl;
+        std::cout << e.what() << std::endl;
     }
-    
+
+    delete rrf;
+    delete rrf1;
+    delete rrf2;
+
+    return ( 0 );
 }
