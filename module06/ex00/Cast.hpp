@@ -1,39 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   Cast.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/10 16:56:29 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/23 14:54:35 by ibouhiri         ###   ########.fr       */
+/*   Created: 2021/03/25 12:05:32 by ibouhiri          #+#    #+#             */
+/*   Updated: 2021/03/25 12:17:39 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-#define PEON_HPP
+#ifndef CAST_HPP
+#define CAST_HPP
 
-# include <string>
-# include <iostream>
-# include  "Victim.hpp"
-class Peon : public Victim
+class Cast
 {
 
 private:
 
-	Peon( void );
+	char* _N;
 
 public:
-	
-	virtual ~Peon ( void );
-	Peon( std::string Name);
-	Peon( Peon const& CpObj);
-	Peon& operator=(Peon const& obj);
 
-	virtual void	getPolymorphed( void ) const;
+	Cast( void );
+	Cast( char *ptr);
+	Cast( const Cast& CObj);
+	Cast& operator=( const Cast& CObj);
+	~Cast ( void );
+
 };
 
-std::ostream& operator<<(std::ostream &out, Peon const& obj );
 
 
 #endif

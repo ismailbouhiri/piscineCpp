@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   Cast.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/10 16:56:29 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/23 14:54:35 by ibouhiri         ###   ########.fr       */
+/*   Created: 2021/03/25 12:06:33 by ibouhiri          #+#    #+#             */
+/*   Updated: 2021/03/25 12:11:06 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-#define PEON_HPP
+# include "Cast.hpp"
 
-# include <string>
-# include <iostream>
-# include  "Victim.hpp"
-class Peon : public Victim
+Cast::Cast( char *ptr ) : _N(ptr)
+{}
+
+Cast::~Cast( void ){}
+
+Cast::Cast( const Cast& CObj)
 {
+	*this = CObj;
+}
 
-private:
-
-	Peon( void );
-
-public:
-	
-	virtual ~Peon ( void );
-	Peon( std::string Name);
-	Peon( Peon const& CpObj);
-	Peon& operator=(Peon const& obj);
-
-	virtual void	getPolymorphed( void ) const;
-};
-
-std::ostream& operator<<(std::ostream &out, Peon const& obj );
-
-
-#endif
+Cast& Cast::operator=( const Cast& CObj)
+{
+	this->_N = CObj._N;
+	return *this;
+}

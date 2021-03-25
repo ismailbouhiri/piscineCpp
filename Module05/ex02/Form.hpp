@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 16:23:32 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/21 14:50:43 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/24 11:38:22 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ public:
 	Form( void );
 	Form( const std::string name, int singGrade, int execGrade );
 	Form( const Form& CObj );
-	Form& operator=( const Form& CObj );
+	Form&	 operator=( const Form& CObj );
 
 	virtual ~Form ( void );
 	
