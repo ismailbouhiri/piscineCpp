@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 16:35:13 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/29 09:47:31 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/29 11:06:26 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		main( void )
 {
-    Array<int> arr(6);
+ 	Array<int> arr(6);
     Array<int> arr1(5);
     Array<char> char_arr(20);
 
@@ -29,15 +29,13 @@ int		main( void )
         char_arr[1] = 'b';
 
         std::cout << arr[0] << " "<< arr1[0] << std::endl;
-
-        for ( size_t i = 0; i < arr.size(); i++ )
+        for (size_t i = 0; i < arr.size(); i++)
             std::cout << arr[i] << " ";
         std::cout << std::endl;
-
-        for ( size_t i = 0; i < arr1.size(); i++ )
+        for (size_t i = 0; i < arr1.size(); i++)
             std::cout << arr1[i] << " ";
         std::cout << std::endl;
-
+		
         for (size_t i = 0; i < char_arr.size(); i++)
             std::cout << char_arr[i] << " ";
         std::cout << std::endl;
@@ -45,7 +43,7 @@ int		main( void )
         arr1[5] = 10;
         std::cout << arr[2] << std::endl;
     }
-    catch( const std::exception& e )
+    catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }

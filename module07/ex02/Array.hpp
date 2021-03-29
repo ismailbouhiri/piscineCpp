@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 16:35:11 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/29 10:12:03 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/03/29 11:05:45 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,10 @@ private:
 
 public:
 
-	Array<T>( void ): _N(0){
-		this->_Array(nullptr);
-	}
+	Array<T>( void ): _N(0), _Array(nullptr) {}
 
 	Array<T>( const unsigned int& n ) : _N(n) {
-		this->_Array = new T[n]();
+		this->_Array = new(std::nothrow) T[n]();
 		if ( !this->_Array )
 			std::cout << "allocation failled !!" << *_Array << std::endl;
 	}
@@ -43,17 +41,14 @@ public:
 	
 	Array& operator=( const Array<T>& CObj ) {
 
-		if (this->_Array[0]) {
+		if (this->_Array) {
 			delete [] this->_Array;
 		}
-		else {
-
-			this->_N = CObj.size();
-			this->_Array = new T[this->_N]();
-			for (unsigned int i = 0; i < this->_N; i++)
-			{
-				this->_Array[i] = CObj._Array[i];
-			}
+		this->_N = CObj.size();
+		this->_Array = new T[this->_N]();
+		for (unsigned int i = 0; i < this->_N; i++)
+		{
+			this->_Array[i] = CObj._Array[i];
 		}
 		return ( *this );
 	}
@@ -69,8 +64,9 @@ public:
 	}
 
 	~Array<T> ( void ){
-		if (_Array[0]) {
+		if (_Array) {
 			delete [] this->_Array;
+			_Array = NULL;
 		}
 	};
 
