@@ -6,7 +6,7 @@
 /*   By: ibouhiri <ibouhiri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 16:34:59 by ibouhiri          #+#    #+#             */
-/*   Updated: 2021/03/28 18:14:50 by ibouhiri         ###   ########.fr       */
+/*   Updated: 2021/04/03 11:18:53 by ibouhiri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@
 template <typename T>
 void swap( T& a,  T& b)
 {
-	T c;
-
-	c = a;
+	T c = a;
 	a = b;
 	b = c;
 }
